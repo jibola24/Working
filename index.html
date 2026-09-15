@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credible Project Services | Trust · Value · Growth</title>
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #ffffff;
+      color: #1a2e3b;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    /* HEADER */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(10, 75, 122, 0.08);
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-icon {
+      background: linear-gradient(145deg, #0a4b7a, #1e6a9f);
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      box-shadow: 0 10px 15px -5px rgba(10,75,122,0.2);
+    }
+    .brand-text h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: -0.02em;
+      color: #0b3b5e;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .brand-text span {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: #55758b;
+      letter-spacing: 0.4px;
+      display: block;
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #1f3e54;
+      font-size: 1rem;
+      transition: color 0.2s;
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: #0a4b7a;
+    }
+    .nav-cta {
+      background: #0a4b7a;
+      color: white !important;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 8px 16px -6px rgba(10,75,122,0.25);
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .nav-cta:hover {
+      background: #1e5f8e;
+      box-shadow: 0 12px 20px -8px rgba(10,75,122,0.3);
+    }
+    /* HERO */
+    .hero-section {
+      padding: 70px 0 50px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .hero-left { flex: 1.2 1 400px; }
+    .hero-tag {
+      background: #ecf3f9;
+      color: #0a4b7a;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 8px 20px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-bottom: 24px;
+      border: 1px solid rgba(10,75,122,0.1);
+    }
+    .hero-left h2 {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #0a2e44;
+      margin-bottom: 20px;
+    }
+    .hero-highlight {
+      color: #0a4b7a;
+      position: relative;
+      display: inline-block;
+    }
+    .hero-highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: #f8c150;
+      opacity: 0.4;
+      z-index: -1;
+      border-radius: 10px;
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      color: #2e4b62;
+      margin-bottom: 32px;
+      max-width: 560px;
+    }
+    .pill-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .pill-item {
+      background: white;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #0a4b7a;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+      border: 1px solid #d9e2ec;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pill-item i { color: #f8b739; }
+    .hero-stats {
+      display: flex;
+      gap: 36px;
+      margin-bottom: 32px;
+    }
+    .stat .number {
+      font-weight: 800;
+      font-size: 2.2rem;
+      color: #0a4b7a;
+    }
+    .stat .label { color: #47647a; font-weight: 500; }
+    .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: #0a4b7a;
+      color: white;
+      font-weight: 600;
+      padding: 16px 36px;
+      border-radius: 60px;
+      text-decoration: none;
+      box-shadow: 0 20px 25px -8px rgba(10,75,122,0.25);
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: #115f96; transform: translateY(-3px); }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #0a4b7a;
+      color: #0a4b7a;
+      font-weight: 600;
+      padding: 16px 36px;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn-outline:hover { background: rgba(10,75,122,0.03); }
+    .hero-right {
+      flex: 1 1 380px;
+      background: linear-gradient(145deg, #f0f7fe, #e3edf6);
+      border-radius: 48px;
+      padding: 40px 32px;
+      box-shadow: 0 30px 40px -20px rgba(0,30,50,0.12);
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+    .service-badge-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 16px;
+    }
+    .service-mini-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(4px);
+      padding: 18px 12px;
+      border-radius: 22px;
+      text-align: center;
+      font-weight: 600;
+      color: #0a2e44;
+      border: 1px solid white;
+      box-shadow: 0 8px 12px -6px rgba(0,0,0,0.04);
+    }
+    .service-mini-card i { font-size: 24px; color: #0a4b7a; margin-bottom: 8px; display: block; }
+    .hero-quote {
+      margin-top: 32px;
+      background: #0a2e44;
+      color: white;
+      padding: 24px;
+      border-radius: 28px;
+      font-weight: 500;
+    }
+    .hero-quote i { color: #f8c150; margin-right: 6px; }
+
+    /* ABOUT */
+    .about-wrapper {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 80px 0 60px;
+    }
+    .about-text { flex: 2 1 300px; }
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #0a2e4a;
+      margin-bottom: 16px;
+    }
+    .about-highlight {
+      background: #f0f6fb;
+      padding: 28px 30px;
+      border-radius: 24px;
+      border-left: 8px solid #f8b739;
+      flex: 1.2 1 240px;
+    }
+    .values-list { list-style: none; margin-top: 20px; }
+    .values-list li { margin-bottom: 16px; font-weight: 500; }
+    .values-list i { color: #0a4b7a; margin-right: 12px; width: 20px; }
+
+    /* SERVICES GRID — clickable cards */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 30px;
+      margin: 40px 0 60px;
+    }
+    .service-card {
+      background: white;
+      padding: 28px 22px;
+      border-radius: 24px;
+      box-shadow: 0 12px 28px -8px rgba(0, 20, 40, 0.06);
+      border: 1px solid #eef2f6;
+      transition: all 0.2s;
+      cursor:pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 36px -12px rgba(10,75,122,0.12);
+      border-color: #cddae5;
+    }
+    .service-icon {
+      background: #eef4fa;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      margin-bottom: 24px;
+      color: #0a4b7a;
+      font-size: 26px;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      color: #0a2e4a;
+    }
+    .service-card p { color: #3a546b; }
+
+    /* TRUST BANNER */
+    .trust-banner {
+      background: #0a2e44;
+      border-radius: 36px;
+      padding: 50px 40px;
+      margin: 70px 0;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .trust-banner h3 { font-size: 2rem; font-weight: 600; max-width: 600px; }
+    .trust-banner i { color: #f8b739; margin-right: 6px; }
+
+    /* CONTACT / FOOTER (Company section removed) */
+    .contact-section {
+      background: #f2f7fc;
+      border-radius: 40px 40px 0 0;
+      padding: 60px 0 40px;
+      margin-top: 60px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 2fr 1fr;  /* adjusted after removing company column */
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #cbdae4;
+    }
+    .footer-brand h4 { font-size: 1.8rem; color: #0a2e4a; }
+    .footer-links a {
+      display: block;
+      color: #2c4b64;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+    .footer-links a:hover { color: #0a4b7a; }
+    .copyright {
+      text-align: center;
+      padding: 24px 0 16px;
+      color: #4a6479;
+    }
+    .email-link { color: #2c4b64; text-decoration: none; }
+    .email-link:hover { color: #0a4b7a; text-decoration: underline; }
+
+    /* MODAL (subpage simulation) */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-content {
+      background: white;
+      max-width: 700px;
+      width: 90%;
+      max-height: 85vh;
+      border-radius: 36px;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 40px 60px -20px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute;
+      top: 24px; right: 28px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #55758b;
+      transition: 0.2s;
+    }
+    .modal-close:hover { color: #0a2e44; }
+    .modal-icon {
+      background: #eef4fa;
+      width: 70px; height: 70px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: #0a4b7a;
+      margin-bottom: 24px;
+    }
+    .modal-content h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0a2e44;
+      margin-bottom: 20px;
+    }
+    .modal-content p { margin-bottom: 18px; color: #2c4053; }
+    .modal-features { margin-top: 24px; }
+    .modal-features li { margin-bottom: 12px; display: flex; gap: 12px; }
+    .modal-features i { color: #0a4b7a; margin-top: 4px; }
+
+    @media (max-width: 900px) {
+      .site-header { flex-direction: column; align-items: stretch; }
+      .hero-left h2 { font-size: 2.7rem; }
+      .brand-text h1 { white-space: normal; }
+      .container { padding: 0 24px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 550px) {
+      .nav-links { gap: 18px; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-icon"><i class="fas fa-cube"></i></div>
+      <div class="brand-text">
+        <h1>CREDIBLE PROJECT SERVICES</h1>
+        <span>Professionalism · Transparency · Efficiency</span>
+      </div>
+    </div>
+    <div class="nav-menu">
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="nav-cta">Get in touch <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero-section">
+    <div class="hero-left">
+      <span class="hero-tag"><i class="fas fa-check-circle" style="margin-right: 8px;"></i> Global standards</span>
+      <h2>Your <span class="hero-highlight">Trusted Partner</span><br>in Project, Supply &<br>Consultancy</h2>
+      <p class="hero-desc">We build trust, create value, and deliver reliable solutions — from corporate supplies to renewable energy and strategic consultancy.</p>
+      <div class="pill-row">
+        <div class="pill-item"><i class="fas fa-gem"></i> Professionalism</div>
+        <div class="pill-item"><i class="fas fa-eye"></i> Transparency</div>
+        <div class="pill-item"><i class="fas fa-tachometer-alt"></i> Efficiency</div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="number">100+</div><div class="label">Projects completed</div></div>
+        <div class="stat"><div class="number">98%</div><div class="label">Client satisfaction</div></div>
+        <div class="stat"><div class="number">24/7</div><div class="label">Dedicated support</div></div>
+      </div>
+      <div class="btn-group">
+        <a href="#services" class="btn-primary">Explore services <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+        <a href="#contact" class="btn-outline">Contact us</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="service-badge-grid">
+        <!-- <div class="service-mini-card"><i class="fas fa-project-diagram"></i> Project Mgmt</div>
+        <div class="service-mini-card"><i class="fas fa-truck"></i> Logistics & Supply</div> -->
+        <div class="service-mini-card"><i class="fas fa-box"></i> Corporate Supplies & Procurement</div>
+        <div class="service-mini-card"><i class="fas fa-tape"></i>Corporate Gifts & Branding</div>
+        <div class="service-mini-card"><i class="fas fa-solar-panel"></i> Solar Energy/ Solutions</div>
+        <div class="service-mini-card"><i class="fas fa-laptop"></i> Secure Document Destruction& Responsible Recycling</div>
+        <!-- <div class="service-mini-card"><i class="fas fa-chalkboard-user"></i> Training & Skills</div> -->
+        <div class="service-mini-card"><i class="fas fa-paint-roller"></i> Credible Foods</div>
+      </div>
+      <div class="hero-quote">
+        <i class="fas fa-quote-left"></i> 
+        <p style="margin:12px 0; font-size:1.2rem; font-weight:600;">We don’t just offer services — we build trust, create value, and drive sustainable growth.</p>
+        <p style="opacity:0.85;">— Credible Project Services</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-wrapper">
+    <div class="about-text">
+      <h2 class="section-title">About Us</h2>
+      <p style="font-size:1.2rem; margin-bottom:24px; font-weight:500; color:#0a4b7a;">Results-driven. Client-focused. Built on integrity.</p>
+      <p style="margin-bottom:20px;">Credible Project Services is a Nigerian professional services company dedicated to delivering reliable project solutions, quality supplies, and expert consultancy. With a strong focus on client satisfaction, we provide detailed solutions that support operational efficiency, project success, and sustainable growth.</p>
+      <p>Our team leverages industry expertise, strategic management, and practical experience to offer services that are reliable, cost-effective, and delivered with professionalism.</p>
+    </div>
+    <div class="about-highlight">
+      <h3 style="color:#0a2e4a; margin-bottom:12px;"><i class="fas fa-bullseye" style="color:#f8b739;"></i> Core values</h3>
+      <ul class="values-list">
+        <li><i class="fas fa-handshake"></i> <strong>Professionalism</strong> – excellence in execution</li>
+        <li><i class="fas fa-search"></i> <strong>Transparency</strong> – open communication</li>
+        <li><i class="fas fa-rocket"></i> <strong>Efficiency</strong> – on time, on budget</li>
+        <li><i class="fas fa-leaf"></i> <strong>Sustainability</strong> – long‑term partnerships</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERVICES (clickable cards open modal subpages) -->
+  <section id="services">
+    <h2 class="section-title">Our services</h2>
+    <p class="hero-desc" style="margin-bottom:30px;"></p>
+    <div class="services-grid" id="servicesGrid"></div>
+  </section>
+
+  <!-- TRUST BANNER -->
+  <div class="trust-banner">
+    <h3><i class="fas fa-star"></i> We build trust, create value, and ensure every service is delivered with professionalism.</h3>
+    <a href="#contact" style="background:#f8b739; color:#0a2e44; padding:16px 36px; border-radius:60px; font-weight:700; text-decoration:none;">Partner with us →</a>
+  </div>
+</div><!-- end container -->
+
+<!-- MODAL (subpage) -->
+<div class="modal-overlay" id="serviceModal">
+  <div class="modal-content">
+    <button class="modal-close" id="closeModalBtn">&times;</button>
+    <div id="modalBody">
+      <!-- dynamic content injected by js -->
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT & FOOTER (Company section removed) -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Credible Project Services</h4>
+        <p style="margin:16px 0; color:#2c4b64;"><i class="fas fa-map-pin"></i> Lagos, Nigeria</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:credibleproject@gmail.com" class="email-link">credibleproject@gmail.com</a></p>
+        <p style="margin-left: 24px;"><a href="mailto:credibleproject2024@gmail.com" class="email-link">credibleproject2024@gmail.com</a></p>
+        <p><i class="fas fa-phone-alt"></i> <a href="tel:+2347085758612" style="color:#2c4b64; text-decoration:none;">+234 708 575 8612</a></p>
+      </div>
+      <div class="footer-links">
+        <h5 style="margin-bottom:16px; color:#0a2e4a;">Services</h5>
+        <a href="#" data-service="Project Management">Project Management</a>
+        <a href="#" data-service="Logistics & Supply Chain">Logistics & Supply Chain</a>
+        <a href="#" data-service="General Supplies">General Supplies</a>
+        <a href="#" data-service="Branded Cellotapes & Corporate Gifts">Branded Cellotapes & Gifts</a>
+        <a href="#" data-service="Solar Energy Solutions">Solar Energy Solutions</a>
+        <a href="#" data-service="IT & HB Consultancy">IT & HB Consultancy</a>
+        <a href="#" data-service="Training & Skills Development">Training & Skills Development</a>
+        <a href="#" data-service="Interior Decorations & Flowers">Interior Decor & Flowers</a>
+      </div>
+      <div class="footer-links">
+        <h5 style="margin-bottom:16px; color:#0a2e4a;">Connect</h5>
+        <a href="https://www.facebook.com/people/Credible-project-Services/61570014178637/"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://www.instagram.com/credibleproject/"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2026 Credible Project Services. All rights reserved. | Professionalism · Transparency · Efficiency</p>
+      <p style="margin-top:10px; font-size:0.9rem;">We build trust, create value, and support long‑term success.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    // ---------- SERVICE DATA (subpage content) ----------
+    const servicesData = [
+      { 
+        title: "Project Management",
+        icon: "fa-project-diagram",
+        description: "End‑to‑end planning, coordination, execution, monitoring & delivery. Our structured approach ensures projects are completed on time, within budget, and to specification.",
+        details: "We manage projects across multiple sectors: corporate supplies, logistics, and renewable energy. Our methodology includes risk assessment, resource allocation, and continuous stakeholder communication. Whether you're launching a new initiative or upgrading infrastructure, we deliver measurable results.",
+        features: ["Project planning & scheduling", "Budget & cost control", "Quality assurance", "Stakeholder reporting"]
+      },
+      {
+        title: "Logistics & Supply Chain",
+        icon: "fa-truck-fast",
+        description: "Efficient logistics and supply chain management, ensuring seamless movement of goods and materials. We optimize operations to reduce cost and improve delivery timelines.",
+        details: "From procurement to last‑mile delivery, we streamline supply chains for businesses of all sizes. Our team leverages industry partnerships and technology to provide real‑time tracking and inventory management.",
+        features: ["Freight forwarding", "Warehousing & distribution", "Inventory optimization", "Customs clearance support"]
+      },
+      {
+        title: "General Supplies",
+        icon: "fa-boxes",
+        description: "Reliable procurement and supply of office essentials, industrial materials, and general consumables. We guarantee quality products delivered with professionalism.",
+        details: "We source high‑quality products from vetted suppliers, ensuring competitive pricing and consistent availability. Our supply network covers office stationery, safety equipment, and facility maintenance items.",
+        features: ["Office supplies", "Industrial consumables", "Bulk purchasing", "Just‑in‑time delivery"]
+      },
+      {
+        title: "Branded Cellotapes & Corporate Gifts",
+        icon: "fa-gift",
+        description: "Durable, professionally branded cello tapes that enhance packaging security, plus high‑quality customized gifts for promotions, staff recognition, and client appreciation.",
+        details: "Make your brand stand out with custom‑printed cello tapes and curated gift items. We handle design, production, and fulfillment—perfect for corporate events, holiday gifting, and brand activation.",
+        features: ["Custom logo tapes", "Premium gift boxes", "Engraved items & accessories", "Bulk order discounts"]
+      },
+      {
+        title: "Solar Energy Solutions",
+        icon: "fa-solar-panel",
+        description: "Supply, installation support, and maintenance of reliable solar energy systems. Cost‑effective, sustainable power solutions for businesses and organizations.",
+        details: "We offer turnkey solar solutions: from energy audits and system design to procurement and after‑sales maintenance. Reduce your carbon footprint and energy bills with our expert team.",
+        features: ["Solar panel supply", "Inverter & battery systems", "Installation supervision", "Preventive maintenance"]
+      },
+      {
+        title: "IT & HB Consultancy",
+        icon: "fa-laptop-code",
+        description: "Improve operational efficiency through technology and human resources alignment. Strategic advisory, IT support, and business process consulting.",
+        details: "We bridge the gap between technology and people. Our consultants assess your current workflows, recommend software/hardware solutions, and assist with HR process optimization.",
+        features: ["IT infrastructure planning", "HR policy development", "Digital transformation", "Training & change management"]
+      },
+      {
+        title: "Training & Skills Development",
+        icon: "fa-chalkboard-user",
+        description: "Professional training materials and expertise‑driven skill development solutions. Empower your workforce with practical, results‑oriented learning.",
+        details: "We design and deliver customized training programs—from leadership workshops to technical upskilling. Our training packs include manuals, presentations, and assessment tools.",
+        features: ["Corporate training", "Skill gap analysis", "Certification prep", "E‑learning modules"]
+      },
+      {
+        title: "Interior Decorations & Flowers",
+        icon: "fa-paint-roller",
+        description: "Creative interior décor and floral services for offices, events, and special occasions. Combining elegance, functionality, and aesthetic appeal.",
+        details: "Transform spaces with our bespoke decoration services. We handle floral arrangements, themed setups, and corporate branding integration for events and workspaces.",
+        features: ["Event styling", "Office plant installations", "Seasonal décor", "Flower delivery & setup"]
+      }
+    ];
+
+    // ---------- RENDER SERVICE CARDS ----------
+    const grid = document.getElementById('servicesGrid');
+    function renderCards() {
+      let html = '';
+      servicesData.forEach((service, index) => {
+        html += `
+          <div class="service-card" data-service-index="${index}">
+            <div class="service-icon"><i class="fas ${service.icon}"></i></div>
+            <h3>${service.title}</h3>
+            <p>${service.description}</p>
+          </div>
+        `;
+      });
+      grid.innerHTML = html;
+    }
+    renderCards();
+
+    // ---------- MODAL LOGIC ----------
+    const modal = document.getElementById('serviceModal');
+    const modalBody = document.getElementById('modalBody');
+    const closeBtn = document.getElementById('closeModalBtn');
+
+    function openModal(service) {
+      const featuresHtml = service.features.map(f => 
+        `<li><i class="fas fa-check-circle"></i> ${f}</li>`
+      ).join('');
+      
+      modalBody.innerHTML = `
+        <div class="modal-icon"><i class="fas ${service.icon}"></i></div>
+        <h2>${service.title}</h2>
+        <p style="font-size:1.1rem; font-weight:500;">${service.description}</p>
+        <p>${service.details}</p>
+        <div class="modal-features">
+          <h4 style="margin-bottom:16px; color:#0a2e4a;">Key features</h4>
+          <ul style="list-style:none;">
+            ${featuresHtml}
+          </ul>
+        </div>
+        <p style="margin-top:24px;"><i class="fas fa-headset"></i> Contact us for a custom quote or consultation.</p>
+      `;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Event delegation for service cards
+    grid.addEventListener('click', (e) => {
+      const card = e.target.closest('.service-card');
+      if (!card) return;
+      const index = card.dataset.serviceIndex;
+      if (index !== undefined) {
+        openModal(servicesData[index]);
+      }
+    });
+
+    // Also make footer service links open the modal
+    document.querySelectorAll('.footer-links a[data-service]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const serviceName = link.getAttribute('data-service');
+        const service = servicesData.find(s => s.title === serviceName);
+        if (service) openModal(service);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === "#" || href === "") return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
